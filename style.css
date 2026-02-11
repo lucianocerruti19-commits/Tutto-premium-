@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.topbar {
+  padding: 20px;
+  background: #111;
+  border-bottom: 2px solid gold;
+}
+
+.subtitle {
+  color: gold;
+}
+
+.hero {
+  padding: 20px;
+}
+
+.btn-main {
+  background: gold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.food-card {
+  background: #111;
+  border: 1px solid gold;
+  border-radius: 15px;
+  padding: 15px;
+  width: 170px;
+  transition: 0.3s;
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+.price {
+  color: gold;
+}
+
+.cart {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 2px solid gold;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 5px;
+}
+
+.btn-clear {
+  background: #444;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  margin: 5px;
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-box {
+  background: #111;
+  border: 2px solid gold;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+.toppings-grid button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gold;
+  background: black;
+  color: gold;
+  cursor: pointer;
+}
+
+.toppings-grid button.active {
+  background: gold;
+  color: black;
+}

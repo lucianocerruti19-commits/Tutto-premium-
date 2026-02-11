@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tutto per Tutti Premium</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#d4af37"/>
+  <link rel="icon" href="icon-192.png"/>
+</head>
+
+<body>
+
+<header class="topbar">
+  <h1 id="logoTap">🍔 Tutto per Tutti</h1>
+  <p class="subtitle">Premium Delivery App</p>
+</header>
+
+<section class="hero">
+  <h2>Pedí desde tu celular 🔥</h2>
+  <button class="btn-main" onclick="useLocation()">📍 Usar mi ubicación</button>
+  <p id="locationText">Ubicación no seleccionada</p>
+</section>
+
+<main class="menu">
+
+  <!-- HAMBURGUESAS -->
+  <h2 class="section-title">🍔 Hamburguesas</h2>
+  <div class="grid">
+
+    <div class="food-card">
+      <h3>Big Tutto Burger</h3>
+      <p class="price">$4500</p>
+      <button onclick="openToppings('Big Tutto Burger', 4500, 'burger')">
+        Agregar +
+      </button>
+    </div>
+
+    <div class="food-card">
+      <h3>Cheese Premium</h3>
+      <p class="price">$5000</p>
+      <button onclick="openToppings('Cheese Premium', 5000, 'burger')">
+        Agregar +
+      </button>
+    </div>
+
+  </div>
+
+  <!-- PIZZAS -->
+  <h2 class="section-title">🍕 Pizzas</h2>
+  <div class="grid">
+
+    <div class="food-card">
+      <h3>Pizza Napolitana</h3>
+      <p class="price">$6000</p>
+      <button onclick="openToppings('Pizza Napolitana', 6000, 'pizza')">
+        Agregar +
+      </button>
+    </div>
+
+    <div class="food-card">
+      <h3>Pizza Pepperoni</h3>
+      <p class="price">$6500</p>
+      <button onclick="openToppings('Pizza Pepperoni', 6500, 'pizza')">
+        Agregar +
+      </button>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- CARRITO -->
+<section class="cart">
+  <h2>🛒 Tu Pedido</h2>
+  <div id="cartItems"></div>
+  <h3>Total: <span id="totalPrice">$0</span></h3>
+
+  <button class="btn-whatsapp" onclick="sendWhatsApp()">📲 Enviar Pedido</button>
+  <button class="btn-clear" onclick="clearCart()">Vaciar</button>
+</section>
+
+<!-- MODAL TOPPINGS -->
+<div id="toppingsModal" class="modal hidden">
+  <div class="modal-box">
+    <h2 id="modalTitle"></h2>
+
+    <p class="modal-sub">Elegí extras:</p>
+    <div id="toppingsButtons" class="toppings-grid"></div>
+
+    <textarea id="notes" placeholder="Observaciones..."></textarea>
+
+    <button class="btn-main" onclick="confirmToppings()">✅ Confirmar</button>
+    <button class="btn-clear" onclick="closeModal()">Cancelar</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="modal hidden">
+  <div class="modal-box">
+    <h2>👑 Panel Admin</h2>
+    <p>Acceso solo para dueño.</p>
+    <button class="btn-clear" onclick="closeAdmin()">Cerrar</button>
+  </div>
+</div>
+
+<footer>
+  <p>🔥 Tutto Premium © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
